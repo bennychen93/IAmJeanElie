@@ -3,14 +3,61 @@ Project::Application.configure do
 
   # Code is not reloaded between requests
   config.cache_classes = true
-  config.action_mailer.default_url_options = {:host => 'myapp.herokuapp.com', :protocol => 'http'}
+  config.action_mailer.default_url_options = {:host => 'agile-taiga-8370.herokuapp.com', :protocol => 'http'}
   config.action_mailer.smtp_settings = {
    :address => "smtp.gmail.com",
    :port => 587,
-   :domain => 'myapp.herokuapp.com',  #I've also tried changing this to 'gmail.com'
+   :domain => 'agile-taiga-8370.herokuapp.com',  #I've also tried changing this to 'gmail.com'
    :authentication => :plain, # I've also tried changing this to :login
    :enable_starttls_auto => true,
    :user_name => 'caraballofelix88@gmail.com',
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    :password => 'Foxhound21xx'
  }
   # Full error reports are disabled and caching is turned on
