@@ -5,8 +5,6 @@ gem 'rails', '3.2.16'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'pg'
 gem 'devise'
 
 
@@ -40,7 +38,12 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 # add to end of Gemfile
+group :production do
+	gem 'pg'
+end
+
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails' 
   gem 'simplecov'
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
