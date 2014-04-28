@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   def after_sign_in_path_for(resource)
   	u = params[:user].confirmed?
-  	if u.nil?
+  	if u
   		flash[:confirm] = "you have not confirm yet!"
   		new_user_session_path
   	else
