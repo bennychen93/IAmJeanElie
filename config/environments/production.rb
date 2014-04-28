@@ -10,55 +10,9 @@ Project::Application.configure do
    :domain => 'agile-taiga-8370.herokuapp.com',  #I've also tried changing this to 'gmail.com'
    :authentication => :plain, # I've also tried changing this to :login
    :enable_starttls_auto => true,
-   :user_name => 'caraballofelix88@gmail.com',
+   :user_name => '',
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   :password => 'Foxhound21xx'
+   :password => ''
  }
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
