@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
   	u = User.find(current_user).confirmed?
   	if !u
-  		flash[:confirm] = "you have not confirm yet!"
+  		flash[:notice] = "you have not confirm yet!"
   		new_user_session_path
   	else
   		edit_user_registration_path
