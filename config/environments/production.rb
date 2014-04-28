@@ -10,7 +10,7 @@ Project::Application.configure do
    :domain => 'agile-taiga-8370.herokuapp.com',  #I've also tried changing this to 'gmail.com'
    :authentication => :plain, # I've also tried changing this to :login
    :enable_starttls_auto => true,
-   :user_name => 'IAmJeanElie123@binghamton.edu',
+   :user_name => 'IAmJeanElie123@gmail.com',
    
    
 
