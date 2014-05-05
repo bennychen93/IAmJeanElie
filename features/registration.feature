@@ -26,13 +26,13 @@ Scenario: too short password
 
 Scenario: registration page layout
   When I go to the registration page
-  Then I should see /Register|Submit|Create( new account)?/i
-  And I should see /Username/i
-  And I should see /Email( address)?/i
-  And I should see /Password/i
-  And I should see /Confirm password|Password confirmation/i
-  And I should see /iamjeanelie/i
-  And I should see /subscribe/i
+  Then I should see /Register|Submit|Create( new account)?/
+  And I should see /Username/
+  And I should see /Email( address)?/
+  And I should see /Password/
+  And I should see /Confirm password|Password confirmation/
+  And I should see /iamjeanelie/
+  And I should see /subscribe/
 
 Scenario: page has link back to main page
   When I go to the registration page
@@ -41,11 +41,11 @@ Scenario: page has link back to main page
 
 Scenario: duplicate email forbidden
   Given the following users exist:
-  | email     | password | confirmation
-  | dummy.edu | jk       | jk
+  | email     | password | confirmation |
+  | dummy.edu | jk       | jk           |
   And I try to register with "dummy.edu", "diff", "diff"
   Then I should be on the registration page
-  And I should see /already exists/i
+  And I should see "already exists"
 
 
 

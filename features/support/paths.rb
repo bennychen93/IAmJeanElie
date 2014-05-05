@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-	 when /^the reg(istration)? page$/
+	 when /^the (sign up|reg(istration)?) page$/
 		'/users/sign_up'
 	 when /^the login page$/
 		'/users/sign_in'
