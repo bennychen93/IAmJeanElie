@@ -26,13 +26,13 @@ Scenario: too short password
 
 Scenario: registration page layout
   When I go to the registration page
-  Then I should see /Register|Submit|Create( new account)?/
-  And I should see /Username/
-  And I should see /Email( address)?/
-  And I should see /Password/
-  And I should see /Confirm password|Password confirmation/
-  And I should see /iamjeanelie/
-  And I should see /subscribe/
+  Then I should see /Register|Submit|Create( new account)?/i
+  And I should see /Username/i
+  And I should see /Email( address)?/i
+  And I should see /Password/i
+  And I should see /Confirm password|Password confirmation/i
+  And I should see /iamjeanelie/i
+  And I should see /subscribe/i
 
 Scenario: page has link back to main page
   When I go to the registration page
