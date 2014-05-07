@@ -43,6 +43,8 @@ group :production do
 end
 
 group :test, :development do
+  gem 'factory_girl_rails'
+  gem 'debugger'
   gem 'sqlite3'
   gem 'rspec-rails' 
   gem 'simplecov'

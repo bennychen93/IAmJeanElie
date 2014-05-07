@@ -20,9 +20,10 @@ Then /^(?:|I )should be on the IamJeanElie homepage$/i do
 end
 
 Given /the following users exist/ do |users_table|
-  users_table.hashes.each do |user|
-	User.create(:email=>user[:email], :password=>user[:password], :confirmation=>user[:confirmation])
-  end
+  debugger
+  user = FactoryGirl.create(:user)
+  debugger
+  User.find(0)
 end
 
 Then /^(?:|I )should see \/([^\/]*)\/(i?)$/ do |regexp, i|
@@ -36,4 +37,13 @@ Then /^(?:|I )should see \/([^\/]*)\/(i?)$/ do |regexp, i|
   else
     assert page.has_xpath?('//*', :text => regexp)
   end
+end
+
+Given /^I am logged in as user ([0-9]+)/ do | user_id |
+  debugger
+  user = User.find(user_id)
+  visit '/users/sign_in'
+  fill_in "user_email", :with => user[:email]
+  fill_in "user_password", :with => user[:password]
+  click_button "Sign in"
 end
