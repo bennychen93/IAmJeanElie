@@ -6,8 +6,8 @@ Feature: MyAccount
 
 Background: Users in database
   Given the following users exist
-    | email | first_name | last_name |
-    | default_email@test.com | Edward | Mansfield |
+    | email | first_name | last_name | password | password_confirmation |
+    | default_email@test.com | Edward | Mansfield | dummypwd | dummypwd |
 
 Scenario: click the link to update the current user's information
   Given I am logged in as user 0

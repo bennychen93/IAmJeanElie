@@ -4,9 +4,9 @@ dumb_password = 'dummypwd'
 short_password = 'jk'
 
 When /^(?:|I )try to register with "(.+)", "(.+)", "(.+)"$/ do |email,pwd,confirm|
- step %{fill in "email_field" with "#{email}"}
- step %{fill in "password_field" with "#{pwd}"}
- step %{fill in "password_confirmation" with "#{confirm}"}
+ step %{fill in "user_email" with "#{email}"}
+ step %{fill in "user_password" with "#{pwd}"}
+ step %{fill in "user_password_confirmation" with "#{confirm}"}
 end
 
 
@@ -20,9 +20,9 @@ Then /^(?:|I )should be on the IamJeanElie homepage$/i do
 end
 
 Given /the following users exist/ do |users_table|
-  debugger
+  #debugger
   user = FactoryGirl.create(:user)
-  debugger
+  #debugger
   User.find(0)
 end
 

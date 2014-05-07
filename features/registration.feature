@@ -7,32 +7,32 @@ Feature: registration
 Scenario: register for account
   When I go to the registration page
   And I try to register with "mhems1@binghamton.edu", "dummypwd", "dummypwd"
-  And I press "Submit"
-  Then I should be on the confirm page
+  And I press "Sign up"
+  Then I should be on the main page
 
 Scenario: conflicting password
   When I go to the registration page
   And I try to register with "mhems1@binghamton.edu", "dummypwd", "diffpwd"
-  And I press "Submit"
-  Then I should be on the registration page
-  And I should see "Password does not match confirmation"
+  And I press "Sign up"
+  Then I should be on the main page
+  And I should see /error(s)? prohibited this user/
 
 Scenario: too short password
   When I go to the registration page
   And I try to register with "mhems1@binghamton.edu", "short", "short"
-  And I press "Submit"
-  Then I should be on the registration page
-  And I should see "Password must be at least 6 characters"
+  And I press "Sign up"
+  Then I should be on the main page
+  And I should see /error(s)? prohibited this user/
 
 Scenario: registration page layout
   When I go to the registration page
   Then I should see /Register|Submit|Create( new account)?/i
-  And I should see /Username/i
+  And I should see /name/i
   And I should see /Email( address)?/i
   And I should see /Password/i
   And I should see /Confirm password|Password confirmation/i
   And I should see /iamjeanelie/i
-  And I should see /subscribe/i
+  #And I should see /subscribe/i
 
 Scenario: page has link back to main page
   When I go to the registration page
@@ -41,8 +41,8 @@ Scenario: page has link back to main page
 
 Scenario: duplicate email forbidden
   Given the following users exist:
-  | email     | password | confirmation |
-  | dummy.edu | jk       | jk           |
+  | email     | password | password_confirmation | first_name | last_name |
+  | dummy.edu | dummypwd | dummypwd              | matt       | hems      |
   And I try to register with "dummy.edu", "diff", "diff"
   Then I should be on the registration page
   And I should see "already exists"
