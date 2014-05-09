@@ -31,21 +31,13 @@ Scenario: registration page layout
   And I should see /Email( address)?/i
   And I should see /Password/i
   And I should see /Confirm password|Password confirmation/i
-  And I should see /iamjeanelie/i
+  #And I should see /iamjeanelie/i
   #And I should see /subscribe/i
 
 Scenario: page has link back to main page
   When I go to the registration page
-  And I press "IamJeanElie"
+  And I follow image "iamjeanelielogo.png"
   Then I should be on the IamJeanElie homepage
-
-Scenario: duplicate email forbidden
-  Given the following users exist:
-  | email     | password | password_confirmation | first_name | last_name |
-  | dummy.edu | dummypwd | dummypwd              | matt       | hems      |
-  And I try to register with "dummy.edu", "diff", "diff"
-  Then I should be on the registration page
-  And I should see "already exists"
 
 
 
