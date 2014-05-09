@@ -9,16 +9,6 @@ When /^(?:|I )try to register with "(.+)", "(.+)", "(.+)"$/ do |email,pwd,confir
  step %{fill in "user_password_confirmation" with "#{confirm}"}
 end
 
-
-Then /^(?:|I )should be on the IamJeanElie homepage$/i do
-  current_path = URI.parse(current_url).path
-  if current_path.respond_to? :should
-    current_path.should == 'http://iamjeanelie.com/'
-  else
-    assert_equal 'http://iamjeanelie.com/', current_path
-  end
-end
-
 Given /the following users exist/ do |users_table|
   #debugger
   user = FactoryGirl.create(:user)
@@ -47,3 +37,8 @@ Given /^I am logged in as user ([0-9]+)/ do | user_id |
   fill_in "user_password", :with => user[:password]
   click_button "Sign in"
 end
+
+When /^I follow image with alt "([^"]+)"$/ do |alt|
+  find(:xpath, "//img[@alt='#{alt}']/..").click
+end
+

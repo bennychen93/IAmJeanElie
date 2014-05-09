@@ -23,11 +23,10 @@ module NavigationHelpers
 		'/users/sign_in'
 	 when /^the confirm(ation)? page$/
 		'/users/confirmation'
-    # Add more mappings here.
-    # Here is an example that pulls values out of the Regexp:
-    #
-    #   when /^(.*)'s profile page$/i
-    #     user_profile_path(User.find_by_login($1))
+    when /^the IamJeanElie home\s?page$/
+      'http://iamjeanelie.com/'
+
+
 
     else
       begin
