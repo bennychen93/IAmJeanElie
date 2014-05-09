@@ -38,8 +38,7 @@ Given /^I am logged in as user ([0-9]+)/ do | user_id |
   click_button "Sign in"
 end
 
-When /^I follow image "([^"]+)"$/ do |image|
-  find("#{image}").click
-
+When /^I follow image with alt "([^"]+)"$/ do |alt|
+  find(:xpath, "//img[@alt='#{alt}']/..").click
 end
 

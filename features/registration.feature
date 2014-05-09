@@ -34,11 +34,6 @@ Scenario: registration page layout
   #And I should see /iamjeanelie/i
   #And I should see /subscribe/i
 
-Scenario: page has link back to main page
-  When I go to the registration page
-  And I follow image "iamjeanelielogo.png"
-  Then I should be on the IamJeanElie homepage
-
 
 
 
