@@ -9,12 +9,12 @@ When /^(?:|I )try to register with "(.+)", "(.+)", "(.+)"$/ do |email,pwd,confir
  step %{fill in "user_password_confirmation" with "#{confirm}"}
 end
 
-Given /the following users exist/ do |users_table|
-  #debugger
-  user = FactoryGirl.create(:user)
-  #debugger
-  User.find(0)
-end
+#Given /the following users exist/ do |users_table|
+#  #debugger
+#  user = FactoryGirl.create(:user)
+#  #debugger
+#  User.find(0)
+#end
 
 Then /^(?:|I )should see \/([^\/]*)\/(i?)$/ do |regexp, i|
   if i == 'i'
@@ -29,14 +29,14 @@ Then /^(?:|I )should see \/([^\/]*)\/(i?)$/ do |regexp, i|
   end
 end
 
-Given /^I am logged in as user ([0-9]+)/ do | user_id |
-  debugger
-  user = User.find(user_id)
-  visit '/users/sign_in'
-  fill_in "user_email", :with => user[:email]
-  fill_in "user_password", :with => user[:password]
-  click_button "Sign in"
-end
+#Given /^I am logged in as user ([0-9]+)/ do | user_id |
+#  debugger
+#  user = User.find(user_id)
+#  visit '/users/sign_in'
+#  fill_in "user_email", :with => user[:email]
+#  fill_in "user_password", :with => user[:password]
+#  click_button "Sign in"
+#end
 
 When /^I follow image with alt "([^"]+)"$/ do |alt|
   find(:xpath, "//img[@alt='#{alt}']/..").click

@@ -13,20 +13,14 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the home\s?page$/
-      '/'
     when /^the main page$/
       '/users'
 	 when /^the (sign up|reg(istration)?) page$/
 		'/users/sign_up'
-	 when /^the login page$/
-		'/users/sign_in'
-	 when /^the confirm(ation)? page$/
-		'/users/confirmation'
-    when /^the IamJeanElie home\s?page$/
-      'http://iamjeanelie.com/'
-
-
+	 when /^the lost password page$/i
+		'/users/password/new'
+	 when /^the password page$/i
+		'/users/password'
 
     else
       begin
